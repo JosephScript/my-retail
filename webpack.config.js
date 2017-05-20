@@ -2,6 +2,24 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 const path = require('path')
 
+// postcss plugins
+const postcssImport = require('postcss-import')
+const cssnext = require('postcss-cssnext')
+
+const preprocessors = [cssnext({
+  browsers: ['last 2 versions'],
+  cascade: false,
+  features: {
+    customProperties: {
+      variables: {
+        '--myretail-font-family': "'Helvetica Neue','Helvetica','Arial', sans-serif"
+      }
+    }
+  }
+}), postcssImport({
+  addDependencyTo: webpack
+})]
+
 module.exports = {
   entry: [
     'react-hot-loader/patch',
@@ -29,6 +47,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: 'body',
       template: './src/index.html'
+    }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      debug: false,
+      options: {
+        postcss: preprocessors
+      }
     }),
     new webpack.HotModuleReplacementPlugin(),
     // enable HMR globally
@@ -61,9 +86,29 @@ module.exports = {
         exclude: /(node_modules|server)/,
         loader: 'babel-loader'
       },
-      { test: /\.css$/, loader: 'style-loader!css-loader' },
-      { test: /\.png$/, loader: 'url-loader?limit=100000' },
-      { test: /\.jpg$/, loader: 'file-loader' }
+      {
+        test: /\.css$/,
+        exclude: /(node_modules)/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'postcss-loader'
+          }
+        ]
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg|ico)$/,
+        loader: 'url-loader?limit=100000'
+      },
+      {
+        test: /\.(woff|woff2|ttf|eot)$/,
+        loader: 'file-loader'
+      }
     ]
   }
 }
