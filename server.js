@@ -1,6 +1,5 @@
 const express = require('express')
 const http = require('http')
-const path = require('path')
 
 const app = express()
 
@@ -34,16 +33,4 @@ app.use(webpackHotMiddleware(compiler))
 // API
 app.use('/api/*?', function (req, res, next) {
   res.send('Data goes here')
-})
-
-app.get('/', function response (req, res, next) {
-  // webpack routes are served slightly differently (from memory)
-  middleware.fileSystem.readFile(path.join(__dirname, 'dist/index.html'), (err, result) => {
-    if (err) {
-      return next(err)
-    } else {
-      res.write(result)
-      res.end()
-    }
-  })
 })
