@@ -12,7 +12,7 @@ export default class ItemListing extends React.Component {
   }
 
   componentDidMount () {
-    itemService.getItem().then(item => {
+    itemService.getItem(this.props.itemId || 0).then(item => {
       this.setState({ item })
     })
   }

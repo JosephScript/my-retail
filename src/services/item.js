@@ -1,8 +1,8 @@
 export default {
     // TODO: Cache item details
 
-  getItem: () => {
-    return fetch('/api/itemId', {
+  getItem: (itemId) => {
+    return fetch('/api/' + itemId, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
