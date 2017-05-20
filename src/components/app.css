@@ -1,12 +1,23 @@
-body {
-  font-family: var(--myretail-font-family);
-}
-
 .container {
-  display: flex;
-  flex: 1;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   max-width: 1170px;
+   margin: 0 auto;
+   padding: 32px 0;
 
-  @media (max-width: 550px) {
+  @media (width < 768px) {
     flex-direction: column;
+  }
+
+  & > .left,
+  & > .right {
+    display: inline-block;
+    width: 50%;
+    order: 1;
+
+    @media (width < 768px) {
+      display: block;
+      width: 100%;
+    }
   }
 }

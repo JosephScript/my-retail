@@ -1,0 +1,50 @@
+*,
+*:before,
+*:after {
+  box-sizing:inherit;
+}
+html, 
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: var(--myretail-font-family);
+  font-size: 14px;
+  color: var(--myretail-dark-grey);
+}
+a{
+  color:inherit;
+  touch-action:manipulation;
+  text-decoration:none;
+  &:hover,&:focus {
+    color: var(--myretail-light-grey);
+  }
+  &:focus {
+    outline: var(--myretail-light-grey) dashed 1px;
+    outline-offset:2px;
+  }
+}
+h1 {
+  font-size:30px;
+  }
+h2{
+  font-size:23px;
+}
+h3{
+  font-size:19px;
+}
+h4{
+  font-size:16px;
+}
+h5{
+  font-size:14px;
+}
+h6{
+  font-size:12px;
+}
+h1,h2,h3,h4,h5,h6{
+  margin:0;
+  outline:0;
+  font-weight: 300;
+}

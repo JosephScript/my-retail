@@ -11,8 +11,11 @@ const preprocessors = [cssnext({
   cascade: false,
   features: {
     customProperties: {
+      // postcss variables are defined here
       variables: {
-        '--myretail-font-family': "'Helvetica Neue','Helvetica','Arial', sans-serif"
+        '--myretail-font-family': "'Helvetica Neue','Helvetica','Arial', sans-serif",
+        '--myretail-light-grey': '#666',
+        '--myretail-dark-grey': '#333'
       }
     }
   }
@@ -30,7 +33,7 @@ module.exports = {
     'webpack/hot/only-dev-server',
     // bundle the client for hot reloading
     // only- means to only hot reload for successful updates
-    './src/app.js'
+    './src/main.js'
   ],
   node: {
     Buffer: false
@@ -94,7 +97,11 @@ module.exports = {
             loader: 'style-loader'
           },
           {
-            loader: 'css-loader'
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[path][name]__[local]--[hash:base64:5]'
+            }
           },
           {
             loader: 'postcss-loader'

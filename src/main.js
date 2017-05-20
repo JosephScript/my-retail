@@ -2,6 +2,7 @@ import { AppContainer } from 'react-hot-loader'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './components/app.jsx'
+import './base.css'
 
 const rootEl = document.getElementById('app')
 const render = Component =>

@@ -1,12 +1,18 @@
 import React from 'react'
-import './app.css'
+import styles from './app.css'
 
 export default class MyComponent extends React.Component {
   render () {
     return (
-      <div>
-        <h1>Header!</h1>
-        <p>Test</p>
+      <div className={styles.container}>
+        <div className={styles.left}>
+          <h1>Header!</h1>
+          <p>Test</p>
+        </div>
+        <div className={styles.right}>
+          <h2>Header!</h2>
+          <p>Price</p>
+        </div>
       </div>
     )
   }
