@@ -13,7 +13,6 @@ const webpack = require('webpack')
 const webpackMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
 
-  // webpack serves all files from memory
 const compiler = webpack(config)
 const middleware = webpackMiddleware(compiler, {
   publicPath: config.output.publicPath,
@@ -33,7 +32,7 @@ app.use(middleware)
 app.use(webpackHotMiddleware(compiler))
 
 // API
-app.use('/api/*', function (req, res, next) {
+app.use('/api/*?', function (req, res, next) {
   res.send('Data goes here')
 })
 
