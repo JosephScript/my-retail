@@ -1,5 +1,6 @@
 const express = require('express')
 const http = require('http')
+const item = require('./data/item-data.json')
 
 const app = express()
 
@@ -32,5 +33,5 @@ app.use(webpackHotMiddleware(compiler))
 
 // API
 app.use('/api/*?', function (req, res, next) {
-  res.send('Data goes here')
+  res.send(item)
 })
