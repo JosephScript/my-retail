@@ -4,9 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "",
+    "start": "node server.js",
     "dev": "npm run watch | npm run start",
-    "watch": "webpack-dev-server --progress --inline",
     "test": "test"
   },
   "standard": {
