@@ -1,7 +1,7 @@
 import { AppContainer } from 'react-hot-loader'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './components/itemListing.jsx'
+import App from './pages/itemListing.jsx'
 import './base.css'
 import 'whatwg-fetch'
 import Promise from 'promise-polyfill'
@@ -20,4 +20,4 @@ const render = Component =>
   )
 
 render(App)
-if (module.hot) module.hot.accept('./components/itemListing.jsx', () => render(App))
+if (module.hot) module.hot.accept('./pages/itemListing.jsx', () => render(App))

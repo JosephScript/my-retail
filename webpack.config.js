@@ -14,8 +14,10 @@ const preprocessors = [cssnext({
       // postcss variables are defined here
       variables: {
         '--myretail-font-family': "'Helvetica Neue','Helvetica','Arial', sans-serif",
-        '--myretail-light-grey': '#666',
-        '--myretail-dark-grey': '#333'
+        '--myretail-light-grey': '#D3D3D3',
+        '--myretail-dark-grey': '#666',
+        '--myretail-black': '#333',
+        '--myretail-red': '#c00'
       }
     }
   }
