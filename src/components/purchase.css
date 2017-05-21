@@ -63,3 +63,25 @@
   border-color: var(--myretail-red);
   background: linear-gradient(to bottom, rgba(204,0,0,.5), rgba(204,0,0,1));
 }
+.findInStore {
+  display: inline-block;
+  width: calc(50% - 16px);
+  text-align: center;
+}
+.returns {
+  margin-top: 32px;
+  display: flex;
+}
+.returnLabel {
+  border-right: 1px solid var(--myretail-light-grey);
+  color: var(--myretail-dark-grey);
+  margin-right: 16px;
+  padding-right: 16px;
+  font-size: 24px;
+}
+.returnDescription {
+  font-size: 12px;
+  & > a {
+    font-weight: 700;
+  }
+}

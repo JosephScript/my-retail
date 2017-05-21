@@ -23,18 +23,31 @@ export default class extends React.Component {
 
   render () {
     return (
-      <form>
-        <div className={styles.quantity}>
-          <label className={styles.quantLabel}>quantity:</label>
-          <div>
-            <a className={styles.countButtons} onClick={this.decrement}>–</a>
-            <span className={styles.count}>{this.state.count}</span>
-            <a className={styles.countButtons} onClick={this.increment}>+</a>
+      <div>
+        <form>
+          <div className={styles.quantity}>
+            <label className={styles.quantLabel}>quantity:</label>
+            <div>
+              <a className={styles.countButtons} onClick={this.decrement}>–</a>
+              <span className={styles.count}>{this.state.count}</span>
+              <a className={styles.countButtons} onClick={this.increment}>+</a>
+            </div>
+          </div>
+          <button type='button' className={styles.formButtons + ' ' + styles.pickup}>Pick Up In Store</button>
+          <button type='button' className={styles.formButtons + ' ' + styles.addToCard}>Add To Cart</button>
+        </form>
+        <div className={styles.findInStore}>
+          <a href='#'>Find in a store</a>
+        </div>
+        <div className={styles.returns}>
+          <div className={styles.returnLabel}>
+            returns
+          </div>
+          <div className={styles.returnDescription}>
+            This item must be returned within 30 days of the ship date. See <a href='#'>return policy</a> for details. Prices, promotions, styles and availability may vary by store and online.
           </div>
         </div>
-        <button type='button' className={styles.formButtons + ' ' + styles.pickup}>Pick Up In Store</button>
-        <button type='button' className={styles.formButtons + ' ' + styles.addToCard}>Add To Cart</button>
-      </form>
+      </div>
     )
   }
 }
