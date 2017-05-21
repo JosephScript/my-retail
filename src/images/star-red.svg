@@ -4,10 +4,10 @@
 	 viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
     <defs>
       <style type="text/css"><![CDATA[
-        #greystar {
-          fill: #666;
+        #redstar {
+          fill: #c00;
         }
       ]]></style>
     </defs>
-<polygon id="greystar" points="512,207.9 315.1,207.9 256,11 196.9,207.9 0,207.9 157.5,316.2 98.5,503.3 256,404.8 413.5,503.3 354.5,316.2 "/>
+<polygon id="redstar" points="512,207.9 315.1,207.9 256,11 196.9,207.9 0,207.9 157.5,316.2 98.5,503.3 256,404.8 413.5,503.3 354.5,316.2 "/>
 </svg>
