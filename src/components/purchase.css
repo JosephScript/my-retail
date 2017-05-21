@@ -1,23 +1,24 @@
 .quantity {
   border: var(--myretail-light-grey) 1px solid;
   border-radius: 4px;
-  width: 200px;
-  padding: 16px 4px;
+  width: calc(50% - 14px);
+  padding: 4px;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 32px;
 }
-.buttons {
-  display:inline-block;
-  width: 24px;
-  height: 24px;
+.countButtons {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
   line-height: 24px;
   border-radius: 50%;
-  color: white;
-  text-align:center;
-  text-decoration:none;
-  background: var(--myretail-light-grey);
-  font-size:20px;
-  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  background: #d3d3d3;
+  font-size: 45px;
+  font-weight: 100;
 
   &:hover {
     background: var(--myretail-dark-grey);
@@ -25,4 +26,40 @@
     cursor: pointer;
     user-select:none;
   }
+}
+.count {
+  display: inline-block;
+  text-align: center;
+  width: 44px;
+  font-size: 26px;
+}
+.quantLabel {
+  line-height: 32px;
+}
+.formButtons {
+  text-transform: uppercase;
+  margin: 0;
+  padding: 4px 0;
+  width: calc(50% - 8px);
+  border: 1px solid;
+  border-radius: 4px;
+  color: white;
+  font-size: 24px;
+  font-weight: 200;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:last-child {
+    margin-left: 8px;
+  }
+}
+.pickup {
+  border-color: var(--myretail-black);
+  background: linear-gradient(to bottom, rgba(51,51,51,.5), rgba(51,51,51,1));
+}
+.addToCard {
+  border-color: var(--myretail-red);
+  background: linear-gradient(to bottom, rgba(204,0,0,.5), rgba(204,0,0,1));
 }

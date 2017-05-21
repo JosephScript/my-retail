@@ -23,16 +23,18 @@ export default class extends React.Component {
 
   render () {
     return (
-      <div>
+      <form>
         <div className={styles.quantity}>
-          <span>quantity:</span>
+          <label className={styles.quantLabel}>quantity:</label>
           <div>
-            <a className={styles.buttons} onClick={this.decrement}>-</a>
-            {this.state.count}
-            <a className={styles.buttons} onClick={this.increment}>+</a>
+            <a className={styles.countButtons} onClick={this.decrement}>–</a>
+            <span className={styles.count}>{this.state.count}</span>
+            <a className={styles.countButtons} onClick={this.increment}>+</a>
           </div>
         </div>
-      </div>
+        <button type='button' className={styles.formButtons + ' ' + styles.pickup}>Pick Up In Store</button>
+        <button type='button' className={styles.formButtons + ' ' + styles.addToCard}>Add To Cart</button>
+      </form>
     )
   }
 }
