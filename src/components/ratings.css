@@ -3,6 +3,10 @@
   font-weight: 500;
   display: flex;
   justify-content: space-between;
+
+  & .star {
+    height: 16px;
+  }
 }
 .ratings {
   background: var(--myretail-light-grey);
@@ -39,4 +43,8 @@
 .reviewName {
   color: var(--myretail-blue);
   padding-right: 6px;
+}
+.star {
+  display: inline;
+  height: 12px;
 }

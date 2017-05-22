@@ -1,13 +1,26 @@
 import React from 'react'
 import styles from './ratings.css'
+import redStar from '../images/star-red.svg'
+import star from '../images/star.svg'
 
 export default class extends React.Component {
+  getStars = num => {
+    let stars = []
+    for (let i = 0; i < num; i++) {
+      stars.push((<object className={styles.star} type='image/svg+xml' data={redStar} />))
+    }
+    for (let j = 0; j < 5 - num; j++) {
+      stars.push((<object className={styles.star} type='image/svg+xml' data={star} />))
+    }
+    return stars
+  }
+
   render () {
     return (
       <div>
         <div className={styles.overall}>
           <span>
-            {this.props.rating} overall
+            {this.getStars(this.props.rating)} overall
           </span>
           <a href='#'>
             view all {this.props.totalReviews} ratings
@@ -34,7 +47,7 @@ export default class extends React.Component {
           </div>
           <div className={styles.ratingsBottom}>
             <div className={styles.ratingsCell}>
-              {this.props.proRating}
+              {this.getStars(this.props.proRating)}
               <div className={styles.title}>
                 {this.props.proReviewTitle}
               </div>
@@ -48,7 +61,7 @@ export default class extends React.Component {
 
             </div>
             <div className={styles.ratingsCell}>
-              {this.props.conRating}
+              {this.getStars(this.props.conRating)}
               <div className={styles.title}>
                 {this.props.conReviewTitle}
               </div>
