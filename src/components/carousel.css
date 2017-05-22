@@ -16,4 +16,11 @@
 .smallImage {
   cursor: pointer;
   width: 80px;
+  border: 1px solid transparent;
+  padding: 3px;
+
+  &[data-selected=true] {
+    border-color: var(--myretail-black);
+    border-radius: 3px;
+  }
 }

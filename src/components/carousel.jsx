@@ -28,7 +28,7 @@ export default class extends React.Component {
               <li key={i}>
                 <img src={x}
                   onClick={() => this.setImage(i)}
-                  className={styles.smallImage} />
+                  className={styles.smallImage} data-selected={i === this.state.currentImage} />
               </li>
             ))
           }
