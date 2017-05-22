@@ -16,6 +16,9 @@ export default class extends React.Component {
         nextImage: i === this.state.imageCount - 1 ? 0 : i + 1
       })
     }
+    this.viewLarger = () => {
+      console.log(this.state.currentImage)
+    }
   }
   componentWillReceiveProps = props => {
     if (~~props.images.length) {
@@ -37,6 +40,9 @@ export default class extends React.Component {
               ? <img className={styles.currentImage} src={this.props.images[this.state.currentImage]} />
               : ''
           }
+        </div>
+        <div className={styles.zoom}>
+          <a onClick={this.viewLarger}>+ view larger</a>
         </div>
         <ul>
           <li>

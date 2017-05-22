@@ -17,6 +17,9 @@
 .currentImage {
   width: 100%;
 }
+.zoom {
+  text-align: center;
+}
 .smallImage {
   cursor: pointer;
   width: 80px;
