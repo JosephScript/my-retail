@@ -1,0 +1,42 @@
+.overall {
+  padding: 16px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+}
+.ratings {
+  background: var(--myretail-light-grey);
+  padding: 16px;
+}
+.ratingsTop {
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--myretail-grey);
+  display: flex;
+
+  & .title {
+    font-weight: 300;
+    font-size: 24px;
+    padding-bottom: 8px;
+  }
+  & .description {
+    color: var(--myretail-dark-grey);
+    font-size: 12px;
+  }
+}
+.ratingsBottom {
+  padding-top: 16px;
+  display: flex;
+
+  & .title {
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 8px;
+  }
+}
+.ratingsCell {
+  width: 50%;
+}
+.reviewName {
+  color: var(--myretail-blue);
+  padding-right: 6px;
+}

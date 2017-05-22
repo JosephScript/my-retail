@@ -18,7 +18,8 @@ const preprocessors = [cssnext({
         '--myretail-grey': '#d3d3d3',
         '--myretail-dark-grey': '#666',
         '--myretail-black': '#333',
-        '--myretail-red': '#c00'
+        '--myretail-red': '#c00',
+        '--myretail-blue': '#33a1de'
       }
     }
   }

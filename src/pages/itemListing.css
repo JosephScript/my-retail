@@ -20,4 +20,9 @@
 .itemHeader {
   text-align: center;
   padding: 0 88px;
+  margin-bottom: 32px;
+
+  @media (width < 768px) {
+  padding: 0 22px;
+  }
 }
