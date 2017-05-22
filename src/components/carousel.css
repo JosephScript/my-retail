@@ -1,8 +1,11 @@
 .carousel {
  & > ul {
   list-style: none;
+  display: flex;
+  justify-content: center;
+
   & > li {
-    display: inline;
+    display: inline-block;
   }
  }
 }
@@ -23,4 +26,14 @@
     border-color: var(--myretail-black);
     border-radius: 3px;
   }
+}
+.symbol {
+  font-size: 42px;
+  font-weight: 100;
+  display: block;
+  transform: scale(1,2);
+  cursor: pointer;
+  margin-top: 17px;
+  text-align: center;
+  user-select:none;
 }

@@ -5,10 +5,26 @@ export default class extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      currentImage: 0
+      previousImage: -1,
+      currentImage: 0,
+      nextImage: 1
     }
     this.setImage = i => {
-      this.setState({ currentImage: i })
+      this.setState({
+        previousImage: i === 0 ? this.state.imageCount - 1 : i - 1,
+        currentImage: i,
+        nextImage: i === this.state.imageCount - 1 ? 0 : i + 1
+      })
+    }
+  }
+  componentWillReceiveProps = props => {
+    if (~~props.images.length) {
+      this.setState({
+        currentImage: 0,
+        previousImage: props.images.length - 1,
+        nextImage: 1,
+        imageCount: props.images.length
+      })
     }
   }
 
@@ -23,15 +39,28 @@ export default class extends React.Component {
           }
         </div>
         <ul>
-          {
-            this.props.images.map((x, i) => (
-              <li key={i}>
-                <img src={x}
-                  onClick={() => this.setImage(i)}
-                  className={styles.smallImage} data-selected={i === this.state.currentImage} />
-              </li>
-            ))
-          }
+          <li>
+            <a onClick={() => this.setImage(this.state.previousImage)}
+              className={styles.symbol}>{'<'}</a>
+          </li>
+          <li>
+            <img src={this.props.images[this.state.previousImage]}
+              onClick={() => this.setImage(this.state.previousImage)}
+              className={styles.smallImage} />
+          </li>
+          <li>
+            <img src={this.props.images[this.state.currentImage]}
+              className={styles.smallImage} data-selected='true' />
+          </li>
+          <li>
+            <img src={this.props.images[this.state.nextImage]}
+              onClick={() => this.setImage(this.state.nextImage)}
+              className={styles.smallImage} />
+          </li>
+          <li>
+            <a onClick={() => this.setImage(this.state.nextImage)}
+              className={styles.symbol}>{'>'}</a>
+          </li>
         </ul>
       </div>
     )
