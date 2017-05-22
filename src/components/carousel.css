@@ -1,3 +1,19 @@
 .carousel {
-  
+ & > ul {
+  list-style: none;
+  & > li {
+    display: inline;
+  }
+ }
+}
+.container {
+  max-width: 400px;
+  margin: 32px auto;
+}
+.currentImage {
+  width: 100%;
+}
+.smallImage {
+  cursor: pointer;
+  width: 80px;
 }

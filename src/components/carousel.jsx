@@ -15,15 +15,20 @@ export default class extends React.Component {
   render () {
     return (
       <div className={styles.carousel}>
-        <h2>product highlights</h2>
-        {
-          this.props.images.length ? <img src={this.props.images[this.state.currentImage]} /> : ''
-        }
+        <div className={styles.container}>
+          {
+            this.props.images.length
+              ? <img className={styles.currentImage} src={this.props.images[this.state.currentImage]} />
+              : ''
+          }
+        </div>
         <ul>
           {
             this.props.images.map((x, i) => (
               <li key={i}>
-                <img src={x} onClick={() => this.setImage(i)} />
+                <img src={x}
+                  onClick={() => this.setImage(i)}
+                  className={styles.smallImage} />
               </li>
             ))
           }
