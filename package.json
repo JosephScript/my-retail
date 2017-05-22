@@ -29,6 +29,7 @@
   "homepage": "https://github.com/NukaPunk/my-retail#readme",
   "dependencies": {
     "express": "^4.15.3",
+    "html-to-react": "^1.2.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "standard-loader": "^6.0.1"

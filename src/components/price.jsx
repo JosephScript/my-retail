@@ -4,6 +4,7 @@ import svg from '../images/mark.svg'
 
 export default class extends React.Component {
   render () {
+    let promos = this.props.promos || []
     return (
       <div>
         <div className={styles.top}>
@@ -12,12 +13,12 @@ export default class extends React.Component {
         </div>
         <div className={styles.bottom}>
           {
-            this.props.promos ? this.props.promos.map((x, i) =>
+            promos.map((x, i) =>
               (<div className={styles.promo} key={i}>
                 <object className={styles.mark} type='image/svg+xml' data={svg} />
                 <span>{x}</span>
               </div>)
-            ) : ''
+            )
           }
         </div>
       </div>

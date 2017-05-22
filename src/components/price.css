@@ -8,19 +8,20 @@
 }
 
 .top {
-  padding-bottom: 32px;
+  margin-bottom: 32px;
 }
 
 .bottom {
-  border-top: 1px solid var(--myretail-light-grey);
-  border-bottom: 1px solid var(--myretail-light-grey);
+  border-top: 1px solid var(--myretail-grey);
+  border-bottom: 1px solid var(--myretail-grey);
   padding: 16px 0;
   margin-bottom: 32px;
 }
 
 .promo {
   color: var(--myretail-red);
-  padding-bottom: 8px;
+  margin-bottom: 8px;
+
   &:last-child  {
     padding-bottom: 0;
   }
