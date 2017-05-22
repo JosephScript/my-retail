@@ -7,6 +7,9 @@ export default class extends React.Component {
     this.state = {
       currentImage: 0
     }
+    this.setImage = i => {
+      this.setState({ currentImage: i })
+    }
   }
 
   render () {
@@ -20,7 +23,7 @@ export default class extends React.Component {
           {
             this.props.images.map((x, i) => (
               <li key={i}>
-                <img src={x} />
+                <img src={x} onClick={() => this.setImage(i)} />
               </li>
             ))
           }
