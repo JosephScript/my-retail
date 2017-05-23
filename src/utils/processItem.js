@@ -1,7 +1,7 @@
 module.exports = (item) => {
   let formattedItem = {
     title: '',
-    price: [],
+    price: '',
     promos: [],
     highlights: [],
     images: [],

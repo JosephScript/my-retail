@@ -4,7 +4,7 @@ describe('Process Item', () => {
   it('it formats blank objects correctly', () => {
     let item = {
       title: '',
-      price: [],
+      price: '',
       promos: [],
       highlights: [],
       images: [],
@@ -32,6 +32,27 @@ describe('Process Item', () => {
       }]
     }
 
-    expect(processItem(item).title).toEqual('Mock title')
+    expect(processItem(item).title).toBe('Mock title')
+  })
+  it('it formats price correctly', () => {
+    let item = {
+      'CatalogEntryView': [
+        {
+          'Offers': [
+            {
+              'OfferPrice': [
+                {
+                  'currencyCode': 'USD',
+                  'formattedPriceValue': '$139.99',
+                  'priceQualifier': 'Online Price',
+                  'priceValue': '13999'
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+    expect(processItem(item).price).toBe('$139.99')
   })
 })
