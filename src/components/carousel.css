@@ -16,9 +16,12 @@
 }
 .currentImage {
   width: 100%;
+  cursor: pointer;
 }
 .zoom {
   text-align: center;
+  user-select:none;
+  cursor: pointer;
 }
 .smallImage {
   cursor: pointer;

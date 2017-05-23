@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './carousel.css'
+import Popup from './popup.jsx'
 
 export default class extends React.Component {
   constructor (props) {
@@ -17,7 +18,10 @@ export default class extends React.Component {
       })
     }
     this.viewLarger = () => {
-      console.log(this.state.currentImage)
+      this.setState({ showPopup: true })
+    }
+    this.closePopup = () => {
+      this.setState({ showPopup: false })
     }
   }
   componentWillReceiveProps = props => {
@@ -37,7 +41,9 @@ export default class extends React.Component {
         <div className={styles.container}>
           {
             this.props.images.length
-              ? <img className={styles.currentImage} src={this.props.images[this.state.currentImage]} />
+              ? <a onClick={this.viewLarger}>
+                <img className={styles.currentImage} src={this.props.images[this.state.currentImage]} />
+              </a>
               : ''
           }
         </div>
@@ -68,6 +74,11 @@ export default class extends React.Component {
               className={styles.symbol}>{'>'}</a>
           </li>
         </ul>
+        {
+          this.state.showPopup
+          ? <Popup image={this.props.images[this.state.currentImage]} close={this.closePopup} />
+          : ''
+        }
       </div>
     )
   }
