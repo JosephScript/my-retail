@@ -34,7 +34,7 @@ module.exports = (item) => {
     if (entry.Offers && entry.Offers.length && entry.Offers[0].OfferPrice && entry.Offers[0].OfferPrice.length) {
       formattedItem.price = entry.Offers[0].OfferPrice[0].formattedPriceValue
     }
-    if (entry.Description && entry.Description.length) {
+    if (entry.Promotions && entry.Promotions.length) {
       formattedItem.promos = entry.Promotions.map(p => (p.Description[0].shortDescription))
     }
 
