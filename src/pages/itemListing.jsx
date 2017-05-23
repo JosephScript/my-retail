@@ -11,26 +11,7 @@ import processItem from '../utils/processItem.js'
 export default class ItemListing extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {
-      title: '',
-      price: [],
-      promos: [],
-      highlights: [],
-      images: [],
-      purchasingChannelCode: 0,
-      rating: 0,
-      totalReviews: 0,
-      proRating: 0,
-      conRating: 0,
-      proReview: '',
-      conReview: '',
-      proReviewTitle: '',
-      conReviewTitle: '',
-      proReviewDate: '',
-      conReviewDate: '',
-      proReviewName: '',
-      conReviewName: ''
-    }
+    this.state = {...processItem({})}
   }
 
   componentDidMount () {
