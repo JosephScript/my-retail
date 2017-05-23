@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './itemListing.css'
-import itemService from '../services/item.js'
 import Price from '../components/price.jsx'
 import Purchase from '../components/purchase.jsx'
 import Highlights from '../components/highlights.jsx'
@@ -11,13 +10,7 @@ import processItem from '../utils/processItem.js'
 export default class ItemListing extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {...processItem({})}
-  }
-
-  componentDidMount () {
-    itemService.getItem(this.props.itemId || 0).then(item => {
-      this.setState({ ...processItem(item) })
-    })
+    this.state = {...processItem(this.props.item)}
   }
   render () {
     return (
