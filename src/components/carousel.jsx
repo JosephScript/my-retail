@@ -52,7 +52,7 @@ export default class extends React.Component {
         </div>
         <ul>
           <li>
-            <a onClick={() => this.setImage(this.state.previousImage)}
+            <a id='previous' onClick={() => this.setImage(this.state.previousImage)}
               className={styles.symbol}>{'<'}</a>
           </li>
           <li>
@@ -70,7 +70,7 @@ export default class extends React.Component {
               className={styles.smallImage} />
           </li>
           <li>
-            <a onClick={() => this.setImage(this.state.nextImage)}
+            <a id='next' onClick={() => this.setImage(this.state.nextImage)}
               className={styles.symbol}>{'>'}</a>
           </li>
         </ul>

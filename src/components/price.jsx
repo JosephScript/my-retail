@@ -7,7 +7,7 @@ export default class extends React.Component {
     return (
       <div>
         <div className={styles.top}>
-          <span className={styles.price}>{this.props.price}</span>
+          <span id='price' className={styles.price}>{this.props.price}</span>
           <span className={styles.priceDescription}> online price</span>
         </div>
         <div className={styles.bottom}>
