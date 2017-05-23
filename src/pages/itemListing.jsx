@@ -6,6 +6,7 @@ import Purchase from '../components/purchase.jsx'
 import Highlights from '../components/highlights.jsx'
 import Carousel from '../components/carousel.jsx'
 import Ratings from '../components/ratings.jsx'
+import processItem from '../utils/processItem.js'
 
 export default class ItemListing extends React.Component {
   constructor (props) {
@@ -34,27 +35,7 @@ export default class ItemListing extends React.Component {
 
   componentDidMount () {
     itemService.getItem(this.props.itemId || 0).then(item => {
-      this.setState({ title: item.CatalogEntryView[0].title })
-      this.setState({ price: item.CatalogEntryView[0].Offers[0].OfferPrice[0].formattedPriceValue })
-      this.setState({ promos: item.CatalogEntryView[0].Promotions.map(p => (p.Description[0].shortDescription)) })
-      this.setState({ highlights: item.CatalogEntryView[0].ItemDescription[0].features })
-      let images = []
-      images.push(item.CatalogEntryView[0].Images[0].PrimaryImage[0].image)
-      images = images.concat(item.CatalogEntryView[0].Images[0].AlternateImages.map(x => x.image))
-      this.setState({ images: images })
-      this.setState({ purchasingChannelCode: item.CatalogEntryView[0].purchasingChannelCode })
-      this.setState({ rating: item.CatalogEntryView[0].CustomerReview[0].consolidatedOverallRating })
-      this.setState({ totalReviews: item.CatalogEntryView[0].CustomerReview[0].totalReviews })
-      this.setState({ proRating: item.CatalogEntryView[0].CustomerReview[0].Pro[0].overallRating })
-      this.setState({ conRating: item.CatalogEntryView[0].CustomerReview[0].Con[0].overallRating })
-      this.setState({ proReview: item.CatalogEntryView[0].CustomerReview[0].Pro[0].review })
-      this.setState({ conReview: item.CatalogEntryView[0].CustomerReview[0].Con[0].review })
-      this.setState({ proReviewTitle: item.CatalogEntryView[0].CustomerReview[0].Pro[0].title })
-      this.setState({ conReviewTitle: item.CatalogEntryView[0].CustomerReview[0].Con[0].title })
-      this.setState({ proReviewDate: new Date(item.CatalogEntryView[0].CustomerReview[0].Pro[0].datePosted).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) })
-      this.setState({ conReviewDate: new Date(item.CatalogEntryView[0].CustomerReview[0].Con[0].datePosted).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) })
-      this.setState({ proReviewName: item.CatalogEntryView[0].CustomerReview[0].Pro[0].screenName })
-      this.setState({ conReviewName: item.CatalogEntryView[0].CustomerReview[0].Con[0].screenName })
+      this.setState({ ...processItem(item) })
     })
   }
   render () {
