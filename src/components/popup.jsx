@@ -6,7 +6,7 @@ export default class extends React.Component {
     return (
       <div className={styles.popup} >
         <div className={styles.content}>
-          <a onClick={this.props.close} className={styles.close}>X</a>
+          <a onClick={this.props.close} id='close' className={styles.close}>X</a>
           <img className={styles.popupImage} src={this.props.image} />
         </div>
       </div>

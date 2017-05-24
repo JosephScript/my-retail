@@ -11,13 +11,13 @@ if (!window.Promise) {
   window.Promise = Promise
 }
 
-// NOTE: Item ID would normally come from query string or some other location on page load
+// NOTE: Item ID would normally come from query string or param on page load
 itemService.getItem(0).then(item => {
   render(App, item)
   if (module.hot) module.hot.accept('./pages/itemListing.jsx', () => render(App, item))
 })
 
-const rootEl = document.getElementById('app')
+const rootEl = document.getElementById('my-retail')
 const render = (Component, item) =>
   ReactDOM.render(
     <AppContainer>

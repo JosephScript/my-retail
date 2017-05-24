@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for utils/processItem.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">utils</a> processItem.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>34/34</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">78.95% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>30/38</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/3</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>32/32</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69</td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">module.exports = (item) =&gt; {
+  let formattedItem = {
+    title: '',
+    price: '',
+    promos: [],
+    highlights: [],
+    images: [],
+    purchasingChannelCode: 0,
+    rating: 0,
+    totalReviews: 0,
+    proRating: 0,
+    conRating: 0,
+    proReview: '',
+    conReview: '',
+    proReviewTitle: '',
+    conReviewTitle: '',
+    proReviewDate: '',
+    conReviewDate: '',
+    proReviewName: '',
+    conReviewName: ''
+  }
+  if (item.CatalogEntryView &amp;&amp; item.CatalogEntryView.length) {
+    let entry = item.CatalogEntryView[0]
+    formattedItem.title = entry.title
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (entry.Images &amp;&amp; entry.Images.length) {
+      formattedItem.images.push(entry.Images[0].PrimaryImage[0].image)
+&nbsp;
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (entry.Images[0].AlternateImages &amp;&amp; entry.Images[0].AlternateImages.length) {
+        formattedItem.images = formattedItem.images.concat(entry.Images[0].AlternateImages.map(x =&gt; x.image))
+      }
+    }
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (entry.Offers &amp;&amp; entry.Offers.length &amp;&amp; entry.Offers[0].OfferPrice &amp;&amp; entry.Offers[0].OfferPrice.length) {
+      formattedItem.price = entry.Offers[0].OfferPrice[0].formattedPriceValue
+    }
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (entry.Promotions &amp;&amp; entry.Promotions.length) {
+      formattedItem.promos = entry.Promotions.map(p =&gt; (p.Description[0].shortDescription))
+    }
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (entry.ItemDescription &amp;&amp; entry.ItemDescription.length) {
+      formattedItem.highlights = entry.ItemDescription[0].features
+    }
+&nbsp;
+    formattedItem.purchasingChannelCode = entry.purchasingChannelCode
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (entry.CustomerReview &amp;&amp; entry.CustomerReview.length) {
+      formattedItem.rating = entry.CustomerReview[0].consolidatedOverallRating
+      formattedItem.totalReviews = entry.CustomerReview[0].totalReviews
+&nbsp;
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (entry.CustomerReview[0].Pro &amp;&amp; entry.CustomerReview[0].Pro.length) {
+        formattedItem.proRating = entry.CustomerReview[0].Pro[0].overallRating
+        formattedItem.proReview = entry.CustomerReview[0].Pro[0].review
+        formattedItem.proReviewTitle = entry.CustomerReview[0].Pro[0].title
+        formattedItem.proReviewDate = new Date(entry.CustomerReview[0].Pro[0].datePosted).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+        formattedItem.proReviewName = entry.CustomerReview[0].Pro[0].screenName
+      }
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (entry.CustomerReview[0].Con &amp;&amp; entry.CustomerReview[0].Con.length) {
+        formattedItem.conRating = entry.CustomerReview[0].Con[0].overallRating
+        formattedItem.conReview = entry.CustomerReview[0].Con[0].review
+        formattedItem.conReviewTitle = entry.CustomerReview[0].Con[0].title
+        formattedItem.conReviewDate = new Date(entry.CustomerReview[0].Con[0].datePosted).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+        formattedItem.conReviewName = entry.CustomerReview[0].Con[0].screenName
+      }
+    }
+  }
+  return formattedItem
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed May 24 2017 15:35:21 GMT-0500 (CDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

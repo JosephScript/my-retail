@@ -8,7 +8,7 @@ const postcssImport = require('postcss-import')
 const cssnext = require('postcss-cssnext')
 
 const preprocessors = [cssnext({
-  browsers: ['last 2 versions'],
+  browsers: ['last 2 versions', 'IE 11'],
   cascade: false,
   features: {
     customProperties: {
@@ -67,15 +67,6 @@ module.exports = {
   ],
   module: {
     rules: [
-      {
-        enforce: 'pre',
-        test: /\.jsx?$/,
-        loader: 'standard-loader',
-        exclude: /(node_modules)/,
-        options: {
-          parser: 'babel-eslint'
-        }
-      },
       {
         test: /\.jsx?$/,
         exclude: /(node_modules|server)/,

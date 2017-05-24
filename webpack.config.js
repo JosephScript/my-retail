@@ -7,7 +7,7 @@ const postcssImport = require('postcss-import')
 const cssnext = require('postcss-cssnext')
 
 const preprocessors = [cssnext({
-  browsers: ['last 2 versions'],
+  browsers: ['last 2 versions', 'IE 11'],
   cascade: false,
   features: {
     customProperties: {

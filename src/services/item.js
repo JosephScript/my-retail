@@ -18,7 +18,8 @@ export default {
         })
       }
     }).catch((ex) => {
-      // TODO: Handle error gracefully
+      // Normally you'd handle this exception by printing an error on the page
+      // but I'm just logging it for this project
       console.log(ex)
     })
   }
