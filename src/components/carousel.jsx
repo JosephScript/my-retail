@@ -6,7 +6,7 @@ export default class extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      previousImage: -1,
+      previousImage: props.images.length - 1,
       currentImage: 0,
       nextImage: 1
     }

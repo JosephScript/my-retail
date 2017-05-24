@@ -47,7 +47,7 @@
 }
 .icon-zoom {
   content: ' ';
-  background: url(../images/magnify.jpg) no-repeat top left;
+  background: url(../images/zoom.png) no-repeat top left;
   height: 30px;
   width: 30px;
   display: inline-block;
