@@ -44,3 +44,11 @@
   text-align: center;
   user-select:none;
 }
+.icon-zoom {
+  content: ' ';
+  background: url(../images/magnify.jpg) no-repeat top left;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  vertical-align: middle;
+}

@@ -12,9 +12,9 @@ export default class extends React.Component {
     }
     this.setImage = i => {
       this.setState({
-        previousImage: i === 0 ? this.state.imageCount - 1 : i - 1,
+        previousImage: i === 0 ? props.images.length - 1 : i - 1,
         currentImage: i,
-        nextImage: i === this.state.imageCount - 1 ? 0 : i + 1
+        nextImage: i === props.images.length - 1 ? 0 : i + 1
       })
     }
     this.viewLarger = () => {
@@ -48,7 +48,8 @@ export default class extends React.Component {
           }
         </div>
         <div className={styles.zoom}>
-          <a onClick={this.viewLarger}>+ view larger</a>
+          <a onClick={this.viewLarger}>
+            <i className={styles['icon-zoom']} /> view larger</a>
         </div>
         <ul>
           <li>
