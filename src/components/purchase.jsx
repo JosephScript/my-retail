@@ -26,7 +26,7 @@ export default class extends React.Component {
       <div>
         <form>
           <div className={styles.quantity}>
-            <label className={styles.quantLabel}>quantity:</label>
+            <label className={styles.quantityLabel}>quantity:</label>
             <div>
               <a className={styles.countButtons} onClick={this.decrement}>–</a>
               <span className={styles.count}>{this.state.count}</span>
@@ -37,7 +37,7 @@ export default class extends React.Component {
           <button type='button' className={styles.formButtons + ' ' + styles.addToCard}>Add To Cart</button>
         </form>
         <div className={styles.findInStore}>
-          <a href='#'>Find in a store</a>
+          <a href='#'>find in a store</a>
         </div>
         <div className={styles.returns}>
           <div className={styles.returnLabel}>

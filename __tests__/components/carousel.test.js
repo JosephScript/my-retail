@@ -9,7 +9,7 @@ describe('Carousel', () => {
     carousel = shallow(<Carousel images={item.images} />)
   })
   it('it has the images', () => {
-    expect(carousel.find('img').length).toEqual(item.images.length)
+    expect(carousel.find('img').length).toEqual(4)
   })
   it('it shows the first image', () => {
     expect(carousel.find('img').first().props().src).toEqual(item.images[0])

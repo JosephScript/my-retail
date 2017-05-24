@@ -31,21 +31,24 @@
   display: inline-block;
   text-align: center;
   width: 44px;
-  font-size: 26px;
+  font-size: 18px;
+  vertical-align: super;
 }
-.quantLabel {
+.quantityLabel {
   line-height: 32px;
+  font-family: var(--myretail-secondary-font-family);
+  padding-left: 8px;
 }
 .formButtons {
   text-transform: uppercase;
   margin: 0;
-  padding: 4px 0;
+  padding: 8px 0;
   width: calc(50% - 8px);
   border: 1px solid;
   border-radius: 4px;
   color: white;
-  font-size: 24px;
-  font-weight: 200;
+  font-size: 18px;
+  font-weight: 300;
 
   &:last-child {
     margin-left: 8px;
@@ -63,6 +66,7 @@
   display: inline-block;
   width: calc(50% - 16px);
   text-align: center;
+  font-size: 12px;
 }
 .returns {
   margin: 32px 0;
@@ -73,10 +77,10 @@
   color: var(--myretail-dark-grey);
   margin-right: 16px;
   padding-right: 16px;
-  font-size: 24px;
+  font-size: 20px;
 }
 .returnDescription {
-  font-size: 12px;
+  font-size: 10px;
   & > a {
     font-weight: 700;
   }
@@ -91,7 +95,7 @@
     border-radius: 4px;
     text-transform: uppercase;
     font-weight: 300;
-    font-size: 14px;
+    font-size: 12px;
     margin: 0 4px;
     width: 33%;
 

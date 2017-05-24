@@ -1,6 +1,10 @@
 .highlights {
   & > h2 {
-    font-weight: 500;
-    font-size: 32px;
+    font-weight: 300;
+    font-size: 36px;
+  }
+  
+  & > ul > li {
+    padding: 4px 0 ;
   }
 }

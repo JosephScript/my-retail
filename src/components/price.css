@@ -1,10 +1,12 @@
 .price {
-  font-weight: 500;
-  font-size: 28px;
+  font-weight: 600;
+  font-size: 30px;
+  font-family: var(--myretail-secondary-font-family);
 }
 
 .priceDescription {
   color: var(--myretail-dark-grey);
+  font-size: 12px;
 }
 
 .top {
@@ -21,6 +23,8 @@
 .promo {
   color: var(--myretail-red);
   margin-bottom: 8px;
+  font-size: 18px;
+  font-family: var(--myretail-secondary-font-family);
 
   &:last-child  {
     padding-bottom: 0;

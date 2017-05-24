@@ -19,9 +19,10 @@ export default class extends React.Component {
     return (
       <div>
         <div className={styles.overall}>
-          <span>
-            {this.getStars(this.props.rating)} overall
-          </span>
+          <div>
+            {this.getStars(this.props.rating)}
+            <span>overall</span>
+          </div>
           <a href='#'>
             view all {this.props.totalReviews} ratings
           </a>

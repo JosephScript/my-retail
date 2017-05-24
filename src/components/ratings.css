@@ -1,11 +1,16 @@
 .overall {
-  padding: 16px;
-  font-weight: 500;
+  padding: 14px;
+  font-weight: 600;
   display: flex;
   justify-content: space-between;
+  font-family: var(--myretail-secondary-font-family);
 
   & .star {
-    height: 16px;
+    height: 28px;
+  }
+
+  & > a {
+    margin-top: 16px;
   }
 }
 .ratings {
@@ -18,13 +23,13 @@
   display: flex;
 
   & .title {
-    font-weight: 300;
-    font-size: 24px;
-    padding-bottom: 8px;
+    font-size: 18px;
+    padding-bottom: 4px;
   }
   & .description {
     color: var(--myretail-dark-grey);
     font-size: 12px;
+    font-family: var(--myretail-secondary-font-family);
   }
 }
 .ratingsBottom {
@@ -32,13 +37,16 @@
   display: flex;
 
   & .title {
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 600;
     padding-bottom: 8px;
+    font-family: var(--myretail-secondary-font-family);
   }
 }
 .ratingsCell {
   width: 50%;
+  font-size: 12px;
+  font-family: var(--myretail-secondary-font-family);
 }
 .reviewName {
   color: var(--myretail-blue);
@@ -46,5 +54,5 @@
 }
 .star {
   display: inline;
-  height: 12px;
+  height: 16px;
 }
