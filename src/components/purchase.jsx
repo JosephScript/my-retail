@@ -5,7 +5,8 @@ export default class extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      count: 1
+      count: 1,
+      purchasingChannelCode: props.purchasingChannelCode
     }
     this.increment = () => {
       this.setState({
@@ -19,6 +20,8 @@ export default class extends React.Component {
         })
       }
     }
+    this.pickupable = () => (this.state.purchasingChannelCode === 0 || this.state.purchasingChannelCode === 2)
+    this.purchaseable = () => (this.state.purchasingChannelCode === 0 || this.state.purchasingChannelCode === 1)
   }
 
   render () {
@@ -33,8 +36,16 @@ export default class extends React.Component {
               <a className={styles.countButtons} onClick={this.increment}>+</a>
             </div>
           </div>
-          <button type='button' className={styles.formButtons + ' ' + styles.pickup}>Pick Up In Store</button>
-          <button type='button' className={styles.formButtons + ' ' + styles.addToCard}>Add To Cart</button>
+          {
+            this.pickupable()
+            ? <button type='button' id='pickup' className={styles.formButtons + ' ' + styles.pickup}>Pick Up In Store</button>
+            : ''
+          }
+          {
+            this.purchaseable()
+            ? <button type='button' id='addToCard' className={styles.formButtons + ' ' + styles.addToCard}>Add To Cart</button>
+            : ''
+          }
         </form>
         <div className={styles.findInStore}>
           <a href='#'>find in a store</a>
