@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 const path = require('path')
+const WebpackCleanupPlugin = require('webpack-cleanup-plugin')
 
 // postcss plugins
 const postcssImport = require('postcss-import')
@@ -29,11 +30,7 @@ const preprocessors = [cssnext({
 })]
 
 module.exports = {
-  devtool: '#inline-source-map',
   entry: [
-    'react-hot-loader/patch',
-    // activate HMR for React
-    'webpack-hot-middleware/client',
     './src/main.js'
   ],
   node: {
@@ -48,32 +45,26 @@ module.exports = {
     publicPath: '/'
   },
   plugins: [
+    new WebpackCleanupPlugin(),
     new HtmlWebpackPlugin({
       inject: 'body',
       template: './src/index.html'
     }),
     new webpack.LoaderOptionsPlugin({
-      minimize: false,
-      debug: true,
+      minimize: true,
+      debug: false,
       options: {
         postcss: preprocessors
       }
     }),
-    new webpack.HotModuleReplacementPlugin(),
-    // enable HMR globally
-    new webpack.NamedModulesPlugin(),
-    // prints more readable module names in the browser console on HMR updates
-    new webpack.NoEmitOnErrorsPlugin()
-    // do not emit compiled assets that include errors
+    new webpack.optimize.UglifyJsPlugin({
+      compress: { warnings: false },
+      comments: false,
+      sourceMap: false,
+      mangle: true,
+      minimize: true
+    })
   ],
-  devServer: {
-    host: 'localhost',
-    port: 3000,
-    historyApiFallback: true,
-    // respond to 404s with index.html
-    hot: true
-    // enable HMR on the server
-  },
   module: {
     rules: [
       {

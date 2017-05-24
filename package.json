@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "dev": "npm run watch | npm run start",
-    "test": "jest"
+    "test": "jest",
+    "build": "webpack --config webpack.production.config.js"
   },
   "jest": {
     "moduleNameMapper": {
@@ -40,7 +41,8 @@
     "html-to-react": "^1.2.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "standard-loader": "^6.0.1"
+    "standard-loader": "^6.0.1",
+    "webpack-cleanup-plugin": "^0.5.1"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
