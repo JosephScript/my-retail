@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a React implimentation of the myRetail production page. It is built using Webpack, transpiled with Babel for ES6 syntax, and uses PostCSS/CSSNext for future forward CSS capabilities. Also included are a promises and a fetch polyfill so that it is compatible with IE11. 
+This is a React implimentation of the myRetail production page. It is built using Webpack, transpiled with Babel for ES6 syntax, and uses PostCSS/CSSNext for future forward CSS capabilities. Also included are ployfills for promises and a fetch, and PostCSS vendorprefixes, so that it is compatible with IE11. 
 
 ## Installation 
 
