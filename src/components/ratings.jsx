@@ -7,7 +7,7 @@ export default class extends React.Component {
   getStars = num => {
     let stars = []
     for (let i = 0; i < num; i++) {
-      stars.push((<object className={styles.star} key={i} type='image/svg+xml' data={redStar} />))
+      stars.push((<object className={styles.star + ' red'} key={i} type='image/svg+xml' data={redStar} />))
     }
     for (let j = 0; j < 5 - num; j++) {
       stars.push((<object className={styles.star} key={4 - j} type='image/svg+xml' data={star} />))
