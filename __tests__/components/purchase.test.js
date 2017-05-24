@@ -6,6 +6,11 @@ describe('Purchase', () => {
   it('renders without crashing', () => {
     shallow(<Purchase />)
   })
+  it('it works with string ints', () => {
+    let purchase = shallow(<Purchase purchasingChannelCode={'0'} />)
+    expect(purchase.find('#addToCard').length).toEqual(1)
+    expect(purchase.find('#pickup').length).toEqual(1)
+  })
   it('it shows both the add to cart and pick up in store buttons if purchasingChannelCode equals 0', () => {
     let purchase = shallow(<Purchase purchasingChannelCode={0} />)
     expect(purchase.find('#addToCard').length).toEqual(1)

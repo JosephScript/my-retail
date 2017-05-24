@@ -6,7 +6,7 @@ export default class extends React.Component {
     super(props)
     this.state = {
       count: 1,
-      purchasingChannelCode: props.purchasingChannelCode
+      purchasingChannelCode: parseInt(props.purchasingChannelCode)
     }
     this.increment = () => {
       this.setState({
