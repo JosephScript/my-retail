@@ -15,9 +15,16 @@ export default class ItemListing extends React.Component {
   render () {
     return (
       <div className={styles.container}>
-        <div className={styles.left}>
+        <div>
           <h1 className={styles.itemHeader}>{this.state.title}</h1>
           <Carousel images={this.state.images} />
+        </div>
+        <div>
+          <Price price={this.state.price} promos={this.state.promos} />
+          <Purchase />
+          <Highlights highlights={this.state.highlights} />
+        </div>
+        <div>
           <Ratings
             rating={this.state.rating}
             totalReviews={this.state.totalReviews}
@@ -31,11 +38,6 @@ export default class ItemListing extends React.Component {
             conReviewDate={this.state.conReviewDate}
             proReviewName={this.state.proReviewName}
             conReviewName={this.state.conReviewName} />
-        </div>
-        <div className={styles.right}>
-          <Price price={this.state.price} promos={this.state.promos} />
-          <Purchase />
-          <Highlights highlights={this.state.highlights} />
         </div>
       </div>
     )

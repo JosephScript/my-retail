@@ -1,3 +1,9 @@
+.ratings {
+  margin-top: -64px;
+  @media (width < 768px) {
+    margin-top: 0;
+  }
+}
 .overall {
   padding: 14px;
   font-weight: 600;
@@ -13,7 +19,7 @@
     margin-top: 16px;
   }
 }
-.ratings {
+.ratingsBox {
   background: var(--myretail-light-grey);
   padding: 16px;
 }

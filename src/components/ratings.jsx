@@ -17,7 +17,7 @@ export default class extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className={styles.ratings}>
         <div className={styles.overall}>
           <div>
             {this.getStars(this.props.rating)}
@@ -27,7 +27,7 @@ export default class extends React.Component {
             view all {this.props.totalReviews} ratings
           </a>
         </div>
-        <div className={styles.ratings}>
+        <div className={styles.ratingsBox}>
           <div className={styles.ratingsTop}>
             <div className={styles.ratingsCell}>
               <div className={styles.title}>
