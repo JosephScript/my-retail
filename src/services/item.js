@@ -20,7 +20,7 @@ export default {
     }).catch((ex) => {
       // Normally you'd handle this exception by printing an error on the page
       // but I'm just logging it for this project
-      console.log(ex)
+      return ex.statusText
     })
   }
 }
