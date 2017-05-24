@@ -4,7 +4,7 @@ import { Parser } from 'html-to-react'
 
 export default class extends React.Component {
   render () {
-    var parser = new Parser()
+    let parser = new Parser()
     return (
       <div className={styles.highlights}>
         <h2>product highlights</h2>

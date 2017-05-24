@@ -17,7 +17,8 @@ module.exports = (item) => {
     proReviewDate: '',
     conReviewDate: '',
     proReviewName: '',
-    conReviewName: ''
+    conReviewName: '',
+    returnPolicy: ''
   }
   if (item.CatalogEntryView && item.CatalogEntryView.length) {
     let entry = item.CatalogEntryView[0]
@@ -62,6 +63,9 @@ module.exports = (item) => {
         formattedItem.conReviewDate = new Date(entry.CustomerReview[0].Con[0].datePosted).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
         formattedItem.conReviewName = entry.CustomerReview[0].Con[0].screenName
       }
+    }
+    if (entry.ReturnPolicy && entry.ReturnPolicy.length) {
+      formattedItem.returnPolicy = entry.ReturnPolicy[0].legalCopy
     }
   }
   return formattedItem

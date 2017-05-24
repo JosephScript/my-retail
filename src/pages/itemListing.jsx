@@ -21,7 +21,7 @@ export default class ItemListing extends React.Component {
         </div>
         <div>
           <Price price={this.state.price} promos={this.state.promos} />
-          <Purchase purchasingChannelCode={this.state.purchasingChannelCode} />
+          <Purchase purchasingChannelCode={this.state.purchasingChannelCode} returnPolicy={this.state.returnPolicy} />
           <Highlights highlights={this.state.highlights} />
         </div>
         <div>

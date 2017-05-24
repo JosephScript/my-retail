@@ -22,7 +22,8 @@ describe('Process Item', () => {
       proReviewDate: '',
       conReviewDate: '',
       proReviewName: '',
-      conReviewName: ''
+      conReviewName: '',
+      returnPolicy: ''
     }
 
     expect(processItem({})).toEqual(item)

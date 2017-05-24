@@ -81,9 +81,6 @@
 }
 .returnDescription {
   font-size: 10px;
-  & > a {
-    font-weight: 700;
-  }
 }
 .actions {
   display: flex;

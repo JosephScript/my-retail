@@ -43,6 +43,3 @@ $ yarn build
 ```
 
 Files are output in the `/dist` folder. Simply serve these with your desired file server. Otherwise if you want to load this into an existing application, you can include the main.js file and a div with `id="my-retail"`. 
-
-### TODO:
-- [ ] Add tooltip when clicking return policy
