@@ -46,4 +46,3 @@ Files are output in the `/dist` folder. Simply serve these with your desired fil
 
 ### TODO:
 - [ ] Add tooltip when clicking return policy
-- [ ] Handle error gracefully in services/item
